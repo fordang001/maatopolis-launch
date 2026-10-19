@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Slate & Accolades - Maatopolis Films</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto; 
+        }
+
+        .projects-container {
+            max-width: 900px;
+            padding: 60px 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            animation: fadeIn 1.5s ease-in;
+            margin: auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 0;
+            color: #ffd700;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 15px;
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .project-block {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            width: 100%;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            margin: 0 0 5px 0;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .project-meta {
+            font-size: 0.9rem;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .project-desc {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #ccc;
+            margin: 0;
+        }
+
+        .accolades-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .accolade-item {
+            display: flex;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid #ffd700;
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        .award-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .award-org {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-top: 5px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            padding: 15px 40px;
+            border: 1px solid rgba(255, 215, 0, 0.5);
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: #ffd700;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .projects-container { padding: 40px 20px; }
+            .project-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="projects-container">
+        <h1>Development Slate</h1>
+        
+        <div class="project-block">
+            <h2 class="project-title">Sankofa</h2>
+            <div class="project-meta">Feature Film Screenplay • Historical Drama (119 Pages)</div>
+            <p class="project-desc">Set in 1539 AD during the Oyo Empire, <em>Sankofa</em> is an epic historical drama that weaves a powerful narrative around figures such as Alaafin Ofinran, Orompotoniyun, and Adesuwa. Utilizing authentic cultural concepts like Bàbá, Ó dá, and Moremi mi, the script grounds an epic scale in deep, character-driven truth.</p>
+        </div>
+
+        <h2 class="section-title">Press & Accolades</h2>
+
+        <div class="accolades-grid">
+            <div class="accolade-item">
+                <span class="award-title">Best Screenplay</span>
+                <span class="award-org">Don and Gee Nicholl Fellowships in Screenwriting</span>
+            </div>
+            <div class="accolade-item">
+                <span class="award-title">Featured Highlight</span>
+                <span class="award-org">All Things Black Publication</span>
+            </div>
+            <div class="accolade-item">
+                <span class="award-title">Screenplay Competition Finalist</span>
+                <span class="award-org">Atlanta Film Festival</span>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-button">Return</a>
+    </div>
+
+</body>
+</html>
