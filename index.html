@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Maatopolis</title>
     <meta name="description" content="Maatopolis: Restoring balance to mainstream media. Join us as we elevate sidelined narratives and unite the world through essential, powerful storytelling.">
     <style>
@@ -23,7 +23,6 @@
             width: 100%;
             height: 100%;
             z-index: 1; 
-            overflow: hidden;
             background-color: #000;
             display: flex;
             justify-content: center;
@@ -34,16 +33,23 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* This anchors the video to the top so her head is never cut off */
+            /* Anchors the video to the top for desktop */
             object-position: center top; 
         }
 
-        /* Mobile specific adjustments to stop extreme cropping */
-        @media (max-width: 768px) {
+        /* Portrait Mobile (Letterboxed like the guy in the hat) */
+        @media (orientation: portrait) {
             .video-container video {
-                /* 'contain' shows the full width with cinematic black bars */
-                object-fit: contain; 
-                object-position: center center;
+                object-fit: contain !important; 
+                object-position: center center !important;
+            }
+        }
+
+        /* Landscape Mobile (Full screen when rotated sideways) */
+        @media (orientation: landscape) and (max-height: 600px) {
+            .video-container video {
+                object-fit: cover !important;
+                object-position: center top !important;
             }
         }
 
