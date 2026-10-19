@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Maatopolis</title>
     <meta name="description" content="Maatopolis: Restoring balance to mainstream media. Join us as we elevate sidelined narratives and unite the world through essential, powerful storytelling.">
+    
+    <!-- Open Graph Tags for iMessage, Twitter, and Facebook Previews -->
+    <meta property="og:title" content="Maatopolis">
+    <meta property="og:description" content="Maatopolis: Restoring balance to mainstream media. Join us as we elevate sidelined narratives and unite the world through essential, powerful storytelling.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maatopolis.com/">
+    
     <style>
         body, html {
             margin: 0;
@@ -33,11 +40,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Anchors the video to the top for desktop */
             object-position: center top; 
         }
 
-        /* Portrait Mobile (Letterboxed like the guy in the hat) */
         @media (orientation: portrait) {
             .video-container video {
                 object-fit: contain !important; 
@@ -45,7 +50,6 @@
             }
         }
 
-        /* Landscape Mobile (Full screen when rotated sideways) */
         @media (orientation: landscape) and (max-height: 600px) {
             .video-container video {
                 object-fit: cover !important;
@@ -68,6 +72,19 @@
             transition: opacity 1.5s ease; 
         }
 
+        .button-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Stacks the buttons vertically on smaller phone screens */
+        @media (max-width: 600px) {
+            .button-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
         .enter-button {
             padding: 15px 40px;
             border: 1px solid rgba(255, 215, 0, 0.5);
@@ -77,9 +94,60 @@
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
+            text-align: center;
         }
 
         .enter-button:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: #ffd700;
+        }
+
+        .social-links {
+            position: absolute;
+            bottom: 40px;
+            display: flex;
+            gap: 30px;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-size: 12px;
+            text-transform: uppercase;
+            opacity: 0.5;
+            transition: opacity 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+            color: #ffd700;
+        }
+
+        /* The Menu button that appears over the video */
+        .floating-menu-btn {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 215, 0, 0.5);
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.8s ease;
+            cursor: pointer;
+            z-index: 3;
+            opacity: 0;
+            pointer-events: none; /* Prevents clicking when hidden */
+        }
+
+        .floating-menu-btn.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .floating-menu-btn:hover {
             background: rgba(255, 215, 0, 0.2);
             border-color: #ffd700;
         }
@@ -93,25 +161,55 @@
         </video>
     </div>
 
+    <!-- Persistent Menu Button for the Video View -->
+    <a href="#" id="menu-btn" class="floating-menu-btn">Menu</a>
+
     <div id="splash-screen">
-        <a href="#" id="enter-btn" class="enter-button">Enter Maatopolis</a>
+        <div class="button-group">
+            <a href="#" id="enter-btn" class="enter-button">Enter Maatopolis</a>
+            <a href="about.html" class="enter-button">About</a>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/maatopolis" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/company/maatopolis/about/?viewAsMember=true" target="_blank">LinkedIn</a>
+        </div>
     </div>
 
     <script>
+        var video = document.getElementById('bg-video');
+        var splash = document.getElementById('splash-screen');
+        var menuBtn = document.getElementById('menu-btn');
+
+        // Logic for clicking 'Enter Maatopolis'
         document.getElementById('enter-btn').addEventListener('click', function(e) {
             e.preventDefault(); 
-            
-            var video = document.getElementById('bg-video');
-            var splash = document.getElementById('splash-screen');
             
             video.volume = 1.0; 
             video.play();
             
+            // Fade out splash screen and disable its buttons
             splash.style.opacity = '0';
+            splash.style.pointerEvents = 'none';
             
-            setTimeout(function() {
-                splash.style.display = 'none';
-            }, 1500); 
+            // Show the floating menu button
+            menuBtn.classList.add('visible');
+        });
+
+        // Logic for clicking 'Menu'
+        menuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Pause the video and reset it to the beginning
+            video.pause();
+            video.currentTime = 0;
+            
+            // Hide the floating menu button
+            menuBtn.classList.remove('visible');
+
+            // Fade the splash screen back in and reactivate its buttons
+            splash.style.opacity = '1';
+            splash.style.pointerEvents = 'auto';
         });
     </script>
 
