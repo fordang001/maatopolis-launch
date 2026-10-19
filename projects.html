@@ -15,7 +15,7 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             overflow-y: auto; 
         }
 
@@ -47,18 +47,10 @@
             width: 100%;
         }
 
-        .section-title {
-            font-size: 1.5rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-top: 20px;
-            color: #fff;
-        }
-
         .project-block {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px;
+            padding: 40px;
             width: 100%;
             text-align: left;
             box-sizing: border-box;
@@ -77,14 +69,34 @@
             color: #ffd700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            line-height: 1.5;
         }
 
         .project-desc {
             font-size: 1.1rem;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #ccc;
-            margin: 0;
+            margin: 0 0 15px 0;
+        }
+        
+        .project-desc strong {
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .project-desc:last-child {
+            margin-bottom: 0;
+        }
+
+        .accolades-title {
+            font-size: 1.2rem;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 40px 0 20px 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            padding-bottom: 10px;
         }
 
         .accolades-grid {
@@ -97,7 +109,7 @@
         .accolade-item {
             display: flex;
             flex-direction: column;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(0, 0, 0, 0.2);
             border-left: 3px solid #ffd700;
             padding: 15px 20px;
             text-align: left;
@@ -118,6 +130,7 @@
 
         .back-button {
             margin-top: 20px;
+            margin-bottom: 40px;
             padding: 15px 40px;
             border: 1px solid rgba(255, 215, 0, 0.5);
             background: rgba(0, 0, 0, 0.4);
@@ -137,6 +150,7 @@
             h1 { font-size: 1.8rem; }
             .projects-container { padding: 40px 20px; }
             .project-title { font-size: 1.5rem; }
+            .project-block { padding: 25px; }
         }
     </style>
 </head>
@@ -145,27 +159,64 @@
     <div class="projects-container">
         <h1>Development Slate</h1>
         
+        <!-- SANKOFA -->
         <div class="project-block">
             <h2 class="project-title">Sankofa</h2>
-            <div class="project-meta">Feature Film Screenplay • Historical Drama (119 Pages)</div>
-            <p class="project-desc">Set in 1539 AD during the Oyo Empire, <em>Sankofa</em> is an epic historical drama that weaves a powerful narrative around figures such as Alaafin Ofinran, Orompotoniyun, and Adesuwa. Utilizing authentic cultural concepts like Bàbá, Ó dá, and Moremi mi, the script grounds an epic scale in deep, character-driven truth.</p>
+            <div class="project-meta">Feature Film Screenplay, Historical Drama (119 Pages)</div>
+            
+            <p class="project-desc"><strong>Logline:</strong> After surviving an attempted honor killing by her father, the mad Warlord Alaafin Ofinran, a rejected Oyo princess must rise from the brutal depths of the slave trade, unite with her estranged uncle, and lead a ragtag army to save the Kingdom of Benin from her father's gunpowder-fueled annihilation.</p>
+            
+            <p class="project-desc"><strong>Creator's Statement:</strong> <em>Sankofa</em> is in the vein of <em>The Woman King</em> meets <em>Gladiator</em>, with the thematic depth of a Shakespearean tragedy like <em>The Winter's Tale</em>. The film aims to elevate sidelined narratives and restore balance to mainstream media. By exploring the rich, untold history of the Oyo Empire and the rise of its first female Alaafin, the film unites audiences through powerful cinematic storytelling and reclaims the cinematic truth of our past.</p>
+
+            <div class="accolades-title">Accolades for Sankofa:</div>
+            <div class="accolades-grid">
+                <div class="accolade-item">
+                    <span class="award-title">Winner: Best Screenplay (Black Butterfly Award)</span>
+                    <span class="award-org">LightReel Film Festival (2026)</span>
+                </div>
+                <div class="accolade-item">
+                    <span class="award-title">Category Top 10</span>
+                    <span class="award-org">Final Draft Big Break Competition (2026)</span>
+                </div>
+                <div class="accolade-item">
+                    <span class="award-title">"Recommended" Badge</span>
+                    <span class="award-org">The Black List</span>
+                </div>
+                <div class="accolade-item">
+                    <span class="award-title">Finalist</span>
+                    <span class="award-org">Stage 32 + Color Farm Media Talent Accelerator Screenwriting Contest</span>
+                </div>
+                <div class="accolade-item">
+                    <span class="award-title">Finalist</span>
+                    <span class="award-org">Palm Springs Diversity Screenplay Contest</span>
+                </div>
+                <div class="accolade-item">
+                    <span class="award-title">Semifinalist</span>
+                    <span class="award-org">Atlanta Film Festival Screenplay Competition (2026)</span>
+                </div>
+                <div class="accolade-item">
+                    <span class="award-title">Semifinalist</span>
+                    <span class="award-org">Los Angeles International Screenplay Awards</span>
+                </div>
+                <div class="accolade-item">
+                    <span class="award-title">Writers Showcase Selection</span>
+                    <span class="award-org">Santa Barbara International Screenplay Awards</span>
+                </div>
+            </div>
         </div>
 
-        <h2 class="section-title">Press & Accolades</h2>
-
-        <div class="accolades-grid">
-            <div class="accolade-item">
-                <span class="award-title">Best Screenplay</span>
-                <span class="award-org">Don and Gee Nicholl Fellowships in Screenwriting</span>
-            </div>
-            <div class="accolade-item">
-                <span class="award-title">Featured Highlight</span>
-                <span class="award-org">All Things Black Publication</span>
-            </div>
-            <div class="accolade-item">
-                <span class="award-title">Screenplay Competition Finalist</span>
-                <span class="award-org">Atlanta Film Festival</span>
-            </div>
+        <!-- SENNUWY -->
+        <div class="project-block">
+            <h2 class="project-title">Sennuwy</h2>
+            <div class="project-meta">Proof of Concept Short Film (30 Minutes), Pre-Production (Crewing Up)<br><em>Extracted from the full-length feature screenplay.</em></div>
+            
+            <p class="project-desc"><strong>Logline:</strong> Two refugee sisters are taken in by their wealthy aunt and reverend uncle in suburban Atlanta, only to discover their sanctuary is a gilded cage of servitude and religious hypocrisy. When one sister catches the eye of a fashion photographer, she must weaponize her newfound confidence to shatter her unpayable debt, shed her stolen identity, and reclaim her autonomy.</p>
+            
+            <p class="project-desc"><strong>Creator's Statement:</strong> At its core, this film examines the insidious machinery of weaponized gratitude and sanctified servitude: a reality quietly pervasive within the upwardly mobile diaspora, where human exploitation hides behind the polished veneer of Christian charity and middle-class respectability. Sponsoring vulnerable relatives from abroad is too often treated not as familial solidarity, but as a transaction: an assumed purchase that incurs an infinite moral debt. In this world, every warm meal, clean bed, and consular stamp becomes leverage to demand unconditional submission. Cruelty is spiritualized as godly discipline, and native names, heritage, and autonomy are systematically stripped away in the name of salvation.</p>
+            
+            <p class="project-desc">What makes this domestic trap uniquely devastating is how it weaponizes the victims' own survival instincts against them. We watch two sisters fracture under the same roof: one coerced into policing the other just to preserve a fragile sense of safety, while the other refuses to let her spirit be colonized.</p>
+            
+            <p class="project-desc">Cinematically, our visual language reflects this psychological war. We trap Abunaw inside the clinical, suffocating stillness of suburban Atlanta: immaculate baseboards, oppressive symmetry, and sterile lemon-waxed surfaces that function as an architectural cage. Against that quiet violence, her inner transformation into Sennuwy erupts as pure cinematic revolt. Through searing strobes, tactile camera work, and high-fashion visual transcendence, the film moves from captive silence to absolute sovereignty. This is not merely a story about surviving abuse; it is about tearing up an unpayable debt, shedding a stolen identity, and resurrecting an ancestral power that can never be owned.</p>
         </div>
 
         <a href="index.html" class="back-button">Return</a>
