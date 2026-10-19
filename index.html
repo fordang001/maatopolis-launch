@@ -6,7 +6,6 @@
     <title>Maatopolis</title>
     <meta name="description" content="Maatopolis: Restoring balance to mainstream media. Join us as we elevate sidelined narratives and unite the world through essential, powerful storytelling.">
     
-    <!-- Open Graph Tags for iMessage, Twitter, and Facebook Previews -->
     <meta property="og:title" content="Maatopolis">
     <meta property="og:description" content="Maatopolis: Restoring balance to mainstream media. Join us as we elevate sidelined narratives and unite the world through essential, powerful storytelling.">
     <meta property="og:type" content="website">
@@ -43,18 +42,10 @@
             object-position: center top; 
         }
 
-        /* Portrait Mobile (Letterboxed - black bars top and bottom) */
-        @media (orientation: portrait) {
+        /* Bulletproof rule for all phones (Portrait AND Landscape) to stop cropping */
+        @media (max-width: 950px) {
             .video-container video {
                 object-fit: contain !important; 
-                object-position: center center !important;
-            }
-        }
-
-        /* Landscape Mobile (Pillarboxed - black bars left and right to prevent cropping) */
-        @media (orientation: landscape) and (max-height: 600px) {
-            .video-container video {
-                object-fit: contain !important;
                 object-position: center center !important;
             }
         }
